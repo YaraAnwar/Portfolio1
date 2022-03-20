@@ -1,21 +1,5 @@
 import React from "react"; 
 
-/* class RepetitionExercise extends React.Component {
-  constructor() {
-    super()
-    this.state = { count: 0 }
-  }
-  render() {
-    return (
-      <div>
-        <p>You clicked {this.state.count} times</p>
-        <button onClick={() => this.setState({ count: this.state.count + 1 })}>
-          Click me
-        </button>
-      </div>)
-  }
-}  */
-
 class RepetitionExercise extends React.Component {
     constructor(props){
         super(props)
@@ -49,10 +33,38 @@ reset() {
 render() {
     return (
         <>
-            <p>{this.props.name}</p>
-            <p>Reps: {this.state.value}</p>
-            <button onClick={() => this.addOne()}>Complete Rep</button>
-            <button onClick={() => this.reset()}>Reset</button>
+            <h2 style={{ color: "#003060", textAlign: "center" }}>{this.props.name}</h2>
+            <h3 style={{
+            color: "#0E86D4", textAlign: "center"
+         }}>Reps: {this.state.value}</h3>
+            <button style={{ backgroundColor: "#FFC000", 
+                            color: "white", 
+                            border: "none",
+                            padding: "10px 20px",
+                            textAlign: "center",
+                            textDecoration: "none",
+                            display: "flex",
+                            fontSize: "12px",
+                            margin: "0 auto",
+                            marginBottom: "10px",
+                            cursor: "pointer",
+                            borderRadius: "12px",
+                }}
+                onClick={() => this.addOne()}>Complete Rep</button>
+            <button style={{ backgroundColor: "#4CAF50", 
+                            color: "white", 
+                            border: "none",
+                            padding: "10px 20px",
+                            textAlign: "center",
+                            textDecoration: "none",
+                            display: "flex",
+                            fontSize: "12px",
+                            margin: "0 auto",
+                            marginBottom: "10px",
+                            cursor: "pointer",
+                            borderRadius: "12px",
+                }}
+                 onClick={() => this.reset()}>Reset</button>
         </>
 
     )

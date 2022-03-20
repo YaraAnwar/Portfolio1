@@ -2,43 +2,6 @@
 
 import React from "react";
 
-/* class DurationExercise extends React.Component {
-    constructor(props) {
-      super(props)
-      this.state = { time: props.seconds, complete: false, interval: undefined }
-    }
-  
-    componentDidMount() {
-      this.setState({
-        interval: setInterval(() => {
-          if (this.state.time > 0) {
-            this.setState({ time: this.state.time - 1 })
-          } else {
-            this.setState({ complete: true })
-            clearInterval(this.state.interval)
-          }
-        }
-          , 1000)
-      })
-    }
-  
-    render() {
-      let minutes = Math.floor(this.state.time / 60)
-      let seconds = this.state.time - minutes*60
-      return (
-        <div>
-          {!this.state.complete ?
-            <p>You have {String(minutes).padStart(2, 0)}:{String(seconds).padStart(2, "0")} seconds left</p>
-            :
-            <p>Timer done!</p>
-          }
-  
-        </div>
-      );
-    }
-  };
-  */
-
 class DurationExercise extends React.Component {
     // using state to store the timer data, that it does not turn on when started, and that it is initially 0 
     state = {
@@ -91,19 +54,73 @@ class DurationExercise extends React.Component {
             //Resume shows that the time is on but it does not equal 0 ( > 0)
             //Reset shows that the timer is off and not equal 0 ( > 0)
             <>
-                <p>{this.props.name}</p>
-                <p>Timer: {minutes} : {seconds} : {milliseconds}</p>
+                <h2 style={{ color: "#003060", textAlign: "center" }}>{this.props.name}</h2>
+                <h3 style={{
+            color: "#0E86D4", textAlign: "center"
+         }}>Timer: {minutes} : {seconds} : {milliseconds}</h3>
                 {this.state.timerOn === false && this.state.timeOnTimer === 0 && (
-                    <button onClick={this.startingTimer}>Start</button>
+                    <button style={{ backgroundColor: "#4CAF50", 
+                    color: "white", 
+                    border: "none",
+                    padding: "10px 20px",
+                    textAlign: "center",
+                    textDecoration: "none",
+                    display: "flex",
+                    fontSize: "12px",
+                    margin: "0 auto",
+                    marginBottom: "10px",
+                    cursor: "pointer",
+                    borderRadius: "12px"
+        }}
+         onClick={this.startingTimer}>Start</button>
                 )}
                 {this.state.timerOn === true && (
-                    <button onClick={this.stopingTimer}>Stop</button>
+                    <button style={{ backgroundColor: "#880808", 
+                    color: "white", 
+                    border: "none",
+                    padding: "10px 20px",
+                    textAlign: "center",
+                    textDecoration: "none",
+                    display: "flex",
+                    fontSize: "12px",
+                    margin: "0 auto",
+                    marginBottom: "10px",
+                    cursor: "pointer",
+                    borderRadius: "12px"
+        }}
+         onClick={this.stopingTimer}>Stop</button>
                 )}
                 {this.state.timerOn === false && this.state.timeOnTimer > 0 && (
-                    <button onClick={this.startingTimer}>Resume</button>
+                    <button style={{ backgroundColor: "#FFC000", 
+                    color: "white", 
+                    border: "none",
+                    padding: "10px 20px",
+                    textAlign: "center",
+                    textDecoration: "none",
+                    display: "flex",
+                    fontSize: "12px",
+                    margin: "0 auto",
+                    marginBottom: "10px",
+                    cursor: "pointer",
+                    borderRadius: "12px"
+        }}
+         onClick={this.startingTimer}>Resume</button>
                 )}
                 {this.state.timerOn === false && this.state.timeOnTimer > 0 && (
-                    <button onClick={this.resetTimer}>Reset</button>
+                    <button style={{ backgroundColor: "#F88379", 
+                    color: "white", 
+                    border: "none",
+                    padding: "10px 20px",
+                    textAlign: "center",
+                    textDecoration: "none",
+                    display: "flex",
+                    fontSize: "12px",
+                    margin: "0 auto",
+                    marginBottom: "10px",
+                    cursor: "pointer",
+                    borderRadius: "12px"
+        }}
+         onClick={this.resetTimer}>Reset</button>
                 )}
             </>
         );
