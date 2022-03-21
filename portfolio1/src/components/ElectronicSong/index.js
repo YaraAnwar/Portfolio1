@@ -21,7 +21,7 @@ class ElectronicSong extends React.Component{
                 The genre: {this.state.genre}</h2>
             <h3 style={{ color: "#003060", textAlign: "center" }}>
                 The artist: {this.state.artist}</h3>
-            <button>Play song: {this.state.sound}</button>
+            <h3>Play song: </h3>
             </>
         )
     }

@@ -7,7 +7,7 @@ import DurationExercise from './components/DurationExercise' ;
 import RepetitionExercise from './components/RepetitionExcercise'; 
 import RapSong from './components/RapSong';
 import ElectronicSong from './components/ElectronicSong';
-import Roses from './components/SongClips/';
+import Roses from './components/SongClips/roses.mp3';
 
 //using const decleration to initialize a value for the screens
 const Menu = "menu"
@@ -58,7 +58,7 @@ class App extends React.Component {
 
   render() {
     let music = [
-      { name: "SAINt JHN", genre: "Electronic", artist: "Roses - remixed by Imanbek", sound: Roses},
+      { name: "SAINt JHN", genre: "Electronic", artist: "Roses - remixed by Imanbek", sound: './components/SongClips/roses.mp3' },
       { name: "Stronger", genre: "Rap", artist: "Kanye West"},
       { name: "The Business", genre: "Electronic", artist: "Tiësto"},
       { name: "Remember the Name", genre: "Rap", artist: "Fort Minor (feat. Styles of Beyond)"}
