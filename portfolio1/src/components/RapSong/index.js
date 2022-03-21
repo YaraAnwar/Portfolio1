@@ -7,21 +7,26 @@ class RapSong extends React.Component{
         this.state = {
             name: this.props.name,
             genre: this.props.genre,
-            artist: this.props.artist
+            artist: this.props.artist,
+            image: this.props.image
         }
     }
 
     render() {
         return (
             <>
-            <h1 style={{ color: "#B87333", textAlign: "center"}}>
+            <div>
+            <img src = {this.state.image} style={{maxWidth: "30%", height: "auto", display: "block", marginLeft: "auto", marginRight: "auto", marginTop: "20px"}}></img>
+            </div>
+            <h1 style={{ color: "#39375B", textAlign: "center"}}>
                 SONG: {this.state.name}
             </h1>
-            <h2 style={{ color: "#0E86D4", textAlign: "center"}}> 
+            <h2 style={{ color: "#745C97", textAlign: "center"}}> 
                 GENRE: {this.state.genre}
             </h2>
-            <h3 style={{ color: "#D27D2D", textAlign: "center" }}>
-                ARTIST: {this.state.artist}</h3>
+            <h3 style={{ color: "#F5B0CB", textAlign: "center" }}>
+                ARTIST: {this.state.artist}
+            </h3>
             </>
         )
     }

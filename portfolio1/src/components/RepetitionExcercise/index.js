@@ -33,6 +33,7 @@ reset() {
 render() {
     return (
         <>
+        <div style={{paddingTop: "100px"}}>
             <h2 style={{ color: "#003060", textAlign: "center" }}>{this.props.name}</h2>
             <h3 style={{
             color: "#0E86D4", textAlign: "center"
@@ -44,7 +45,7 @@ render() {
                             textAlign: "center",
                             textDecoration: "none",
                             display: "flex",
-                            fontSize: "12px",
+                            fontSize: "18px",
                             margin: "0 auto",
                             marginBottom: "10px",
                             cursor: "pointer",
@@ -58,13 +59,14 @@ render() {
                             textAlign: "center",
                             textDecoration: "none",
                             display: "flex",
-                            fontSize: "12px",
+                            fontSize: "18px",
                             margin: "0 auto",
                             marginBottom: "10px",
                             cursor: "pointer",
                             borderRadius: "12px",
                 }}
                  onClick={() => this.reset()}>Reset</button>
+        </div>
         </>
 
     )

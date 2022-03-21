@@ -54,6 +54,7 @@ class DurationExercise extends React.Component {
             //Resume shows that the time is on but it does not equal 0 ( > 0)
             //Reset shows that the timer is off and not equal 0 ( > 0)
             <>
+            <div style={{paddingTop: "100px"}}>
                 <h2 style={{ color: "#003060", textAlign: "center" }}>{this.props.name}</h2>
                 <h3 style={{
             color: "#0E86D4", textAlign: "center"
@@ -66,7 +67,7 @@ class DurationExercise extends React.Component {
                     textAlign: "center",
                     textDecoration: "none",
                     display: "flex",
-                    fontSize: "12px",
+                    fontSize: "18px",
                     margin: "0 auto",
                     marginBottom: "10px",
                     cursor: "pointer",
@@ -82,7 +83,7 @@ class DurationExercise extends React.Component {
                     textAlign: "center",
                     textDecoration: "none",
                     display: "flex",
-                    fontSize: "12px",
+                    fontSize: "18px",
                     margin: "0 auto",
                     marginBottom: "10px",
                     cursor: "pointer",
@@ -98,7 +99,7 @@ class DurationExercise extends React.Component {
                     textAlign: "center",
                     textDecoration: "none",
                     display: "flex",
-                    fontSize: "12px",
+                    fontSize: "18px",
                     margin: "0 auto",
                     marginBottom: "10px",
                     cursor: "pointer",
@@ -114,7 +115,7 @@ class DurationExercise extends React.Component {
                     textAlign: "center",
                     textDecoration: "none",
                     display: "flex",
-                    fontSize: "12px",
+                    fontSize: "18px",
                     margin: "0 auto",
                     marginBottom: "10px",
                     cursor: "pointer",
@@ -122,6 +123,7 @@ class DurationExercise extends React.Component {
         }}
          onClick={this.resetTimer}>Reset</button>
                 )}
+        </div>
             </>
         );
     }

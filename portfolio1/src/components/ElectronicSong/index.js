@@ -8,20 +8,25 @@ class ElectronicSong extends React.Component{
             name: this.props.name,
             genre: this.props.genre,
             artist: this.props.artist,
-            sound: this.props.sound
+            image: this.props.image
         }
     }
 
     render() {
         return (
             <>
-            <h1 style={{ color: "#055C9D", textAlign: "center"}}>
-                The song: {this.state.name}</h1>
-            <h2 style={{ color: "#0E86D4", textAlign: "center"}}> 
-                The genre: {this.state.genre}</h2>
-            <h3 style={{ color: "#003060", textAlign: "center" }}>
-                The artist: {this.state.artist}</h3>
-            <h3>Play song: </h3>
+            <div>
+            <img src = {this.state.image} style={{maxWidth: "30%", height: "auto", display: "block", marginLeft: "auto", marginRight: "auto", marginTop: "20px"}}></img>
+            </div>
+            <h1 style={{ color: "#39375B", textAlign: "center"}}>
+                SONG: {this.state.name}
+            </h1>
+            <h2 style={{ color: "#745C97", textAlign: "center"}}> 
+                GENRE: {this.state.genre}
+            </h2>
+            <h3 style={{ color: "#F5B0CB", textAlign: "center" }}>
+                ARTIST: {this.state.artist}
+            </h3>
             </>
         )
     }
