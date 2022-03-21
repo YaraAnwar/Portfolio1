@@ -5,11 +5,15 @@ import './App.css';
 import React from 'react';
 import DurationExercise from './components/DurationExercise' ;
 import RepetitionExercise from './components/RepetitionExcercise'; 
+import RapSong from './components/RapSong';
+import ElectronicSong from './components/ElectronicSong';
 
 //using const decleration to initialize a value for the screens
 const Menu = "menu"
 const Repetition_Exercise = "repetition_execrsie"
 const Duration_Exercise = "dusration_exercise"
+const Electronic_Song = "electronic_song"
+const Rap_Song = "rap_song"
 
 class App extends React.Component {
   constructor(props) {
@@ -23,6 +27,13 @@ class App extends React.Component {
       { name: "Running", exerciseType: "duration"},
       { name: "Sit Ups", exerciseType: "repetition", value: 0},
     ]
+
+    //let music = [
+     // { song: "SAINt JHN", genre: "electronic", artist: "Roses - remixed by Imanbek"},
+     // { song: "Stronger", genre: "rap", artist: "Kanye West"},
+     // { song: "The Business", genre: "electronic", artist: "Tiësto"},
+     // { song: "Stronger", genre: "rap", artist: "Kanye West"}
+    //]
 
     //setting the state of the array and screen and updating it 
     this.state ={
@@ -45,6 +56,13 @@ class App extends React.Component {
   }
 
   render() {
+    let music = [
+      { name: "SAINt JHN", genre: "Electronic", artist: "Roses - remixed by Imanbek"},
+      { name: "Stronger", genre: "Rap", artist: "Kanye West"},
+      { name: "The Business", genre: "Electronic", artist: "Tiësto"},
+      { name: "Remember the Name", genre: "Rap", artist: "Fort Minor (feat. Styles of Beyond)"}
+    ]
+
     //using screen and switch to connect the value of buttons to its execution. Basically, rendering a specific component based on users inputs 
     let screen 
     switch (this.state.currentScreen) {
@@ -58,10 +76,10 @@ class App extends React.Component {
           <>
           <h1 style={{
             color: "#055C9D", textAlign: "center"
-         }}>Go Do Something!</h1>
+         }}>Your Specialized Workout Routine!</h1>
           <p style={{
             color: "#0E86D4", marginLeft: "15px"
-         }}>Select an exercise:</p>
+         }}>Begin here:</p>
           <ul id="exList" style={{ textAlign: "center"
          }}>
             {filteredArray.map((obj, index) => 
@@ -90,9 +108,38 @@ class App extends React.Component {
             >{obj.name}</button>
             </li>)}
           </ul>
+
+          <h2 style={{ color: "#0E86D4", marginLeft: "15px"}}>
+           Here is a list of fun song to listen to while you workout!</h2>
+          <ul>
+            {music.map((obj) =>
+            <li>
+              <button style={{ backgroundColor: "#E3735E", 
+                            color: "white", 
+                            border: "none",
+                            padding: "10px 20px",
+                            textAlign: "center",
+                            textDecoration: "none",
+                            display: "flex",
+                            fontSize: "12px",
+                            marginBottom: "10px",
+                            cursor: "pointer",
+                            borderRadius: "12px"
+                }}
+              onClick={() => this.setState({
+                currentScreen: 
+                obj.genre === "electronic"
+                ? Electronic_Song
+                : Rap_Song,
+                selectedItem: obj
+              }) 
+            }>{obj.name}</button>
+            </li>)}
+          </ul>
           </>
         )
       break 
+
       case Repetition_Exercise:
         screen = (
           <>
@@ -116,6 +163,7 @@ class App extends React.Component {
           </>
         )
       break 
+
       case Duration_Exercise:
         screen = (
           <>
@@ -138,7 +186,55 @@ class App extends React.Component {
           </button>
           </>
         )
-        break 
+        break
+        case Electronic_Song:
+          screen = (
+            <>
+            <ElectronicSong {...this.state.selectedItem} />
+            <button style={{ backgroundColor: "#DB7093", 
+                              color: "white", 
+                              border: "none",
+                              padding: "10px 20px",
+                              textAlign: "center",
+                              textDecoration: "none",
+                              display: "flex",
+                              fontSize: "12px",
+                              margin: "0 auto",
+                              marginBottom: "10px",
+                              cursor: "pointer",
+                              borderRadius: "12px"
+                  }}
+                   onClick={() => this.setState({ currentScreen: Menu})}>
+              Return 
+            </button>
+            </>
+          )
+          break
+          
+          case Rap_Song:
+            screen = (
+              <>
+              <RapSong {...this.state.selectedItem} />
+              <button style={{ backgroundColor: "#DB7093", 
+                                color: "white", 
+                                border: "none",
+                                padding: "10px 20px",
+                                textAlign: "center",
+                                textDecoration: "none",
+                                display: "flex",
+                                fontSize: "12px",
+                                margin: "0 auto",
+                                marginBottom: "10px",
+                                cursor: "pointer",
+                                borderRadius: "12px"
+                    }}
+                     onClick={() => this.setState({ currentScreen: Menu})}>
+                Return 
+              </button>
+              </>
+            )
+            break 
+        
         default: 
         screen = undefined
     }
