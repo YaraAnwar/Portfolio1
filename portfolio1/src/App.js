@@ -241,7 +241,7 @@ class App extends React.Component {
             screen = (
               <>
               <ExerciseTutorial />
-              <button style={{ backgroundColor: "#DB7093", 
+              <button style={{ backgroundColor: "#880808", 
                                 color: "white", 
                                 border: "none",
                                 padding: "10px 20px",
