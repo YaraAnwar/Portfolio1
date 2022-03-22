@@ -20,4 +20,6 @@
   <li><b>RapSong</b> Displays the song image and text of the song name, that its genre is rap and the artists name </li>
   
   <li><b>ExerciseTutorial</b> displays an array of the exercise names with its corresponding gif</li>
+ 
+  <li>Styled and designed</li>
  </ul>
