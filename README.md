@@ -14,8 +14,10 @@
 
 
  <h2>Features</h2>
- <p><b>ElectronicSong</b> Displays the song image and text of the song name, that its genre is electronic and the artists name </p>
+ <ul>
+ <li><b>ElectronicSong</b> Displays the song image and text of the song name, that its genre is electronic and the artists name </li>
 
-  <p><b>RapSong</b> Displays the song image and text of the song name, that its genre is rap and the artists name </p>
+  <li><b>RapSong</b> Displays the song image and text of the song name, that its genre is rap and the artists name </li>
   
-  <p><b>ExerciseTutorial</b> displays an array of the exercise names with its corresponding gif</p>
+  <li><b>ExerciseTutorial</b> displays an array of the exercise names with its corresponding gif</li>
+ </ul>
